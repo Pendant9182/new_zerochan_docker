@@ -1,2 +1,31 @@
 # new_zerochan_docker
-New_0ch_Plus のデフォルトの状態のDocker置き場
+
+## 概要
+
+New_0ch_Plus のデフォルトの状態のDocker関連のファイル置き場
+<https://github.com/PrefKarafuto/New_0ch_Plus/>
+
+```bash
+docker compose -p プロジェクト名 up
+```
+
+で起動
+<http://localhost:8080/test/admin.cgi>にアクセスすれば見れます
+
+
+```bash
+docker compose -p プロジェクト名 down
+```
+で終了
+
+
+
+## ディレクトリ構成
+
+```plain
+.
+├── Dockerfile
+│   ├── Readme.txt
+│   └── test
+└── docker-compose.yml
+```
