@@ -1,0 +1,20 @@
+version: '3'
+services:
+  zero_chan_dev:
+    container_name: new_zero_chan_dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./New_0ch_Plus-0.8.4/test:/usr/local/apache2/htdocs/test
+    command: >
+      bash -c "chmod 707 /usr/local/apache2/htdocs/ && chmod 705 /usr/local/apache2/htdocs/test && \
+      find /usr/local/apache2/htdocs/test -maxdepth 1 -name *.cgi | xargs chmod 705 && \
+      find /usr/local/apache2/htdocs/test -name *.pl | xargs chmod 604 && \
+      find /usr/local/apache2/htdocs/test -name index.html | xargs chmod 600 && \
+      chmod 705 /usr/local/apache2/htdocs/test/datas /usr/local/apache2/htdocs/test/module /usr/local/apache2/htdocs/test/admin /usr/local/apache2/htdocs/test/plugin /usr/local/apache2/htdocs/test/perllib && \
+      find /usr/local/apache2/htdocs/test/perllib -type d | xargs chmod 705 && \
+      chmod 707 /usr/local/apache2/htdocs/test/info /usr/local/apache2/htdocs/test/info/.session /usr/local/apache2/htdocs/test/plugin_conf && \
+      httpd-foreground"
