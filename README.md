@@ -18,6 +18,8 @@ docker compose -p プロジェクト名 down
 ```
 で終了
 
+中で作成したファイル等はrootになるので注意してください
+devcontainer.json等は現在作成中です
 
 
 ## ディレクトリ構成
