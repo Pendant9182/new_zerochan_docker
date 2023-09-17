@@ -1,6 +1,6 @@
 version: '3'
 services:
-  zero_chan_dev:
+  new_zero_chan_dev:
     container_name: new_zero_chan_dev
     build:
       context: .
